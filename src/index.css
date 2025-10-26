@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: 'Inter', 'SF Pro', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@layer utilities {
+  .glass {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .gradient-primary {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  }
+  
+  .gradient-success {
+    background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  }
+  
+  .text-gradient {
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
+/* Compact layout adjustments */
+@layer components {
+  /* Reduce section spacing */
+  .dashboard-section > div {
+    margin-bottom: 2rem !important;
+  }
+  
+  /* Reduce glass container padding */
+  .glass.rounded-3xl {
+    padding: 1.5rem 2rem !important;
+  }
+  
+  @media (min-width: 768px) {
+    .glass.rounded-3xl {
+      padding: 2rem 2.5rem !important;
+    }
+  }
+}
